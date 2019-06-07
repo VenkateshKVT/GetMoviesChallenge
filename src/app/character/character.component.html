@@ -1,0 +1,17 @@
+<h1>List of the characters</h1>
+
+<div>
+  <ul>
+    <li *ngFor="let char of characters">
+        <a (click)="getMovies(char)">{{char.name}}</a>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="showMovie">
+  <h3>Movies of the selected character are:</h3>
+  <ul *ngFor="let i of movieNames">
+    <li>{{i}}</li>
+  </ul>
+  <p *ngIf="showError">{{errorMessage}}</p>
+</div>
